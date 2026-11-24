@@ -1,0 +1,295 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --app-bg: #0b0f19;
+    --app-surface: #131b2e;
+    --app-surface-light: #1e293b;
+    --app-primary: #3b82f6;
+    --app-accent: #10b981;
+    --app-rose: #f43f5e;
+    --app-amber: #f59e0b;
+    --app-purple: #8b5cf6;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    box-sizing: border-box;
+  }
+
+  input, textarea, select {
+    user-select: text;
+  }
+
+  body {
+    background-color: #030712;
+    color: #f3f4f6;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 9999px;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ========================================================
+   EFEK 3D TIMBUL & TACTILE PRESS (Elevated Tactile Feel)
+   ======================================================== */
+
+/* General 3D Timbul Card */
+.card-timbul {
+  background: linear-gradient(145deg, #161e31, #0f1524);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 8px 0 0 #080d18,
+    0 16px 28px -4px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-radius: 1.5rem;
+  transition: all 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-timbul:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 0 0 #080d18,
+    0 20px 32px -4px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Base Timbul Button Behavior */
+.btn-timbul {
+  position: relative;
+  transition: all 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(0);
+  cursor: pointer;
+}
+
+/* Primary Blue 3D Timbul */
+.btn-timbul-primary {
+  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+  border: 1px solid #60a5fa;
+  box-shadow: 
+    0 4px 0 0 #1d4ed8,
+    0 8px 16px -2px rgba(37, 99, 235, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.btn-timbul-primary:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 
+    0 5.5px 0 0 #1d4ed8,
+    0 12px 20px -2px rgba(37, 99, 235, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+.btn-timbul-primary:active {
+  transform: translateY(3.5px) !important;
+  box-shadow: 
+    0 0.5px 0 0 #1d4ed8,
+    0 2px 6px rgba(37, 99, 235, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Emerald Green 3D Timbul */
+.btn-timbul-emerald {
+  background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+  border: 1px solid #34d399;
+  box-shadow: 
+    0 4px 0 0 #047857,
+    0 8px 16px -2px rgba(16, 185, 129, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.btn-timbul-emerald:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 
+    0 5.5px 0 0 #047857,
+    0 12px 20px -2px rgba(16, 185, 129, 0.6);
+}
+.btn-timbul-emerald:active {
+  transform: translateY(3.5px) !important;
+  box-shadow: 
+    0 0.5px 0 0 #047857,
+    0 2px 6px rgba(16, 185, 129, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Rose Red 3D Timbul */
+.btn-timbul-rose {
+  background: linear-gradient(180deg, #f43f5e 0%, #e11d48 100%);
+  border: 1px solid #fb7185;
+  box-shadow: 
+    0 4px 0 0 #be123c,
+    0 8px 16px -2px rgba(244, 63, 94, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.btn-timbul-rose:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 
+    0 5.5px 0 0 #be123c,
+    0 12px 20px -2px rgba(244, 63, 94, 0.6);
+}
+.btn-timbul-rose:active {
+  transform: translateY(3.5px) !important;
+  box-shadow: 
+    0 0.5px 0 0 #be123c,
+    0 2px 6px rgba(244, 63, 94, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Dark Slate 3D Timbul */
+.btn-timbul-dark {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 4px 0 0 #050b16,
+    0 8px 16px -2px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+.btn-timbul-dark:hover {
+  transform: translateY(-1.5px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 5.5px 0 0 #050b16,
+    0 12px 20px -2px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.btn-timbul-dark:active {
+  transform: translateY(3.5px) !important;
+  box-shadow: 
+    0 0.5px 0 0 #050b16,
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Small Tactile Pill / Key */
+.key-timbul {
+  background: linear-gradient(180deg, #1e293b 0%, #111827 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 3px 0 0 #030712,
+    0 6px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.08s ease;
+}
+.key-timbul:active {
+  transform: translateY(2.5px);
+  box-shadow: 
+    0 0.5px 0 0 #030712,
+    inset 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Big 3D Floating Action Button (FAB) */
+.fab-timbul {
+  background: linear-gradient(145deg, #3b82f6, #1d4ed8);
+  border: 2px solid #93c5fd;
+  box-shadow: 
+    0 6px 0 0 #1e3a8a,
+    0 16px 32px -4px rgba(37, 99, 235, 0.6),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.12s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.fab-timbul:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 8px 0 0 #1e3a8a,
+    0 20px 36px -4px rgba(37, 99, 235, 0.7),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5);
+}
+.fab-timbul:active {
+  transform: translateY(5px) scale(0.96) !important;
+  box-shadow: 
+    0 1px 0 0 #1e3a8a,
+    0 4px 8px rgba(37, 99, 235, 0.3),
+    inset 0 3px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ========================================================
+   SEMBUNYIKAN BADGE & DRAWER BAWAAN NETLIFY
+   ======================================================== */
+a[href*="netlify"],
+a[href*="netlify.com"],
+[class*="netlify"],
+[id*="netlify"],
+#netlify-badge,
+[data-netlify-drawer],
+#netlify-toolbar,
+.netlify-badge,
+iframe[src*="netlify"],
+netlify-drawer,
+div[class*="netlify-drawer"],
+div[id*="netlify-drawer"],
+div[class*="feedback-drawer"],
+[data-netlify-deploy-id] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  position: absolute !important;
+  z-index: -99999 !important;
+}
